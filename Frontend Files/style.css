@@ -1,0 +1,66 @@
+body {
+    padding-top: 56px;
+    background: linear-gradient(
+        to bottom,
+        rgba(238, 174, 238, 0.7), /* Light violet */
+        rgba(180, 180, 238, 0.7), /* Light indigo */
+        rgba(173, 216, 230, 0.7), /* Light blue */
+        rgba(144, 238, 144, 0.7), /* Light green */
+        rgba(255, 255, 224, 0.7), /* Light yellow */
+        rgba(255, 218, 185, 0.7), /* Light orange */
+        rgba(255, 182, 193, 0.7)  /* Light red */
+    );
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    min-height: 100vh;
+    color: #333; /* Darker text color for better readability */
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.5); /* More transparent white background */
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.8) !important; /* Slightly transparent navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for navbar */
+}
+
+/* Add some padding to the bottom of the page */
+.container, .container-fluid {
+    padding-bottom: 50px;
+}
+
+/* Style adjustments for better readability */
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
+}
+
+/* Footer style adjustment */
+footer {
+    background-color: rgba(51, 51, 51, 0.8) !important;
+    color: white !important;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Additional styles for better contrast and readability */
+.bg-danger-subtle {
+    background-color: rgba(255, 200, 200, 0.7) !important; /* Lighter red background */
+}
+
+.text-danger-emphasis {
+    color: #721c24 !important; /* Darker red text for emphasis */
+}
