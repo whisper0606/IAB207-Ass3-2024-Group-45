@@ -2,13 +2,12 @@
     font-family: Helvetica, Arial, sans-serif;
 }
 
-body {
-    padding-top: 5rem;
+body main {
     background: whitesmoke;
     background-attachment: fixed;
     background-size: 100% 100%;
     min-height: 100vh;
-    color: #333; /* Darker text color for better readability */
+    color: black; /* Darker text color for better readability */
 }
 
 .content-wrapper {
@@ -21,13 +20,8 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-.navbar {
-    background-color: rgb(255, 255, 255) !important; /* Slightly transparent navbar */
-    box-shadow: 0 2px 4px rgba(37, 35, 35, 0.1); /* Subtle shadow for navbar */
-}
-
 #logo{
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: bolder;
 
 }
@@ -36,21 +30,23 @@ body {
 }
 #logo a{
     text-decoration: none;
-    color: #141d28;
+    color: black;
 }
 
-
-
-/* Add some padding to the bottom of the page */
-.container, .container-fluid {
-    padding-bottom: 50px;
-    
+.navbar {
+    box-shadow: 0 2px 4px rgba(37, 35, 35, 0.1); /* Subtle shadow for navbar */
 }
 
-/* Style adjustments for better readability */
-h1, h2, h3, h4, h5, h6 {
-    color: #333;
+nav li{
+    font-weight: bold;
+    color: black;
+    font-size: 1.1rem;
 }
+
+.carousel-item{
+    height: 35rem;
+}
+
 
 .card {
     background-color: rgba(255, 255, 255, 0.8);
@@ -58,18 +54,9 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
 }
 
-
-/* Additional styles for better contrast and readability */
-.bg-danger-subtle {
-    background-color: rgba(255, 200, 200, 0.7) !important; /* Lighter red background */
-}
-
-.text-danger-emphasis {
-    color: #721c24 !important; /* Darker red text for emphasis */
-}
-
 footer{
     background-color: white;
     box-shadow: 1px 2px 10px 1px rgba(0,0,0,0.2);
 
 }
+
