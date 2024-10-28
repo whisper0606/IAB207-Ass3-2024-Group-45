@@ -1,6 +1,6 @@
 # import flask - from 'package' import 'Class'
 from flask import Flask 
-from flask_bootstrap import Bootstrap5
+from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
@@ -19,7 +19,7 @@ def create_app():
     # initialise db with flask app
     db.init_app(app)
 
-    Bootstrap5(app)
+    Bootstrap(app)
     
     # initialise the login manager
     login_manager = LoginManager()
@@ -39,7 +39,7 @@ def create_app():
     from . import views
     app.register_blueprint(views.main_bp)
 
-    from . import auth
-    app.register_blueprint(auth.auth_bp)
+    '''from . import auth
+    app.register_blueprint(auth.auth_bp)'''
     
     return app
