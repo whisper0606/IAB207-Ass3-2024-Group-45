@@ -1,5 +1,9 @@
+* {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
 body {
-    padding-top: 56px;
+    padding-top: 5rem;
     background: whitesmoke;
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -18,13 +22,29 @@ body {
 }
 
 .navbar {
-    background-color: rgba(255, 255, 255, 0.8) !important; /* Slightly transparent navbar */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for navbar */
+    background-color: rgb(255, 255, 255) !important; /* Slightly transparent navbar */
+    box-shadow: 0 2px 4px rgba(37, 35, 35, 0.1); /* Subtle shadow for navbar */
 }
+
+#logo{
+    font-size: 40px;
+    font-weight: bolder;
+
+}
+#logo span{
+    color: #0073ff;
+}
+#logo a{
+    text-decoration: none;
+    color: #141d28;
+}
+
+
 
 /* Add some padding to the bottom of the page */
 .container, .container-fluid {
     padding-bottom: 50px;
+    
 }
 
 /* Style adjustments for better readability */
