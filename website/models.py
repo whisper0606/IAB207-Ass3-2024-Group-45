@@ -3,7 +3,7 @@ from datetime import datetime
 from flask_login import UserMixin
 from enum import Enum
 
-class User(db.Model): # TODO - ADD UserMixin WHEN WORKING ON AUTHENTICAITON
+class User(db.Model, UserMixin):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), index=True, unique=True, nullable=False)
