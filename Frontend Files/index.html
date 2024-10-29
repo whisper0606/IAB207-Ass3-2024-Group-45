@@ -6,195 +6,36 @@
     <title>MusicLIVE - Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Music<span>LIVE</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="event_details.html">Event Details</a></li>
-                    <li class="nav-item"><a class="nav-link" href="create_event.html">Create Event</a></li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#">Register</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Header Section -->
-    <div class="container text-center mt-5">
-        <h1>Where Music Meets Magic!</h1>
-        <p class="lead">Festival Wave is Australia's premier multi-genre music extravaganza, set to electrify Wollongong Plaza, NSW from August 16-18, 2025. This three-day celebration of sound and culture brings together the best of rock, pop, electronic, and hip-hop music, featuring a stellar lineup including Courtney Barnett, Tame Impala, The KID Laroi, Flume, and Hilltop Hoods.</p>
-    </div>
-
-    <!-- Search & Category Filter -->
-    <div class="container mt-4">
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search events..." aria-label="Search">
-            <button class="btn btn-outline-primary" type="submit">Search</button>
-        </form>
-        <div class="dropdown mt-3">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                Browse by Category
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" href="#">Rock/Alternative</a></li>
-                <li><a class="dropdown-item" href="#">Pop/Folk</a></li>
-                <li><a class="dropdown-item" href="#">Hip-hop/R&B</a></li>
-                <li><a class="dropdown-item" href="#">Electronic/Dance</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Upcoming Events Section -->
-    <div class="container mt-5">
-        <h2>Upcoming Events</h2>
-        <div class="row">
-            <!-- Event 1 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/courtney.jpg" class="card-img-top" alt="Event 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Rock/Alternative</h5>
-                        <p class="card-text">Location: Melbourne | Status: Open</p>
-                        <a href="event_details.html" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 2 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/flume.jpg" class="card-img-top" alt="Event 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Pop/Folk</h5>
-                        <p class="card-text">Location: Sydney | Status: Sold Out</p>
-                        <a href="event_details.html" class="btn btn-warning disabled">View Details</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- New Event 3 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/dean.jpg" class="card-img-top" alt="Event 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Hip-hop/R&B</h5>
-                        <p class="card-text">Location: Brisbane | Status: Open</p>
-                        <a href="event_details.html" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3 mt-5">
-        <p>&copy; 2024 MusicLIVE. All rights reserved.</p>
-    </footer>
-<!--BODY FOOTER-->
-<footer>
-    <div id="footer" class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-1 row-cols-lg-5 py-5 border-top">
-            <div class="col-sm-6 col-md-12 col-lg-4">
-                <img src="img/logo.jpg" height="125px">
-                <p class="text-body-secondary">&copy; 2024</p>
-            </div>
-        
-            <div class="col-sm-6 col-md-3 col-lg-2">
-                <h5>Company</h5>
-                <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About Us</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Privacy Policy</a></li>
-                </ul>
-            </div>
-        
-            <div class="col-sm-6 col-md-3 col-lg-2 mb-3">
-                <h5>Find Events</h5>
-                <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">All Genres</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Indie</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Dance</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pop</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Rock</a></li>
-                </ul>
-            </div>
-        
-            <div class="col-sm-6 col-md-3 col-lg-2">
-                <h5>Plan Events</h5>
-                <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="event-creation.html" class="nav-link p-0 text-body-secondary">Create Events</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Manage Events</a></li>
-                <li class="nav-item mb-2"><a href="user-booking-history.html" class="nav-link p-0 text-body-secondary">Booking History</a></li>
-                </ul>
-            </div>
-
-            <div class="col-sm-6 col-md-3 col-lg-2 mb-3">
-                <h5>Discover More!</h5>
-                <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                    <button class="btn btn-primary" type="button">Register Now</button>
-                </div>
-            </div>
-            </div>
-            
-        </div>
-    </div>
-</footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MusicLIVE</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-light fixed-top">
-        <div class="container-fluid">
-            <a id="logo" class="navbar-brand" href="index.html">Music<span>LIVE</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="event_details.html">Event Details</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="create_event.html">Create Event</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="my_bookings.html">My Bookings</a>
-                    </li>
-                </ul>
+    <!--HEADER-->
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand logo-nav" href="index.html">Music<span>LIVE</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#browse-events">Browse Events</a></li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!--END OF NAVBAR-->
-
+    <!--MAIN CONTENT-->
     <main>
-
         <div class="content-wrapper">
 
             <!-- Carousel -->
@@ -229,116 +70,163 @@
                 </button>
             </div>
 
-            <!-- Main content -->
-            <div id="home">
-                <h1 class="text-center p-5 mb-5 mt-5">Where Music Meets Magic!</h1>
-                <div class="p-5 mb-5">
-                    <p>Festival Wave is Australia's premier multi-genre music extravaganza, set to electrify Wollongong Plaza, NSW from August 16-18, 2025. This three-day celebration of sound and culture brings together the best of rock, pop, electronic, and hip-hop music, featuring a stellar lineup including Courtney Barnett, Tame Impala, The KID Laroi, Flume, and Hilltop Hoods.</p>
-                    <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="button" class="btn btn-light">Learn more</button>
+
+
+        <!-- MAIN HEADING -->
+        <div class="container text-center mt-5">
+            <h1 id="browse-events">Where Music Meets Magic!</h1>
+            <p class="lead">Festival Wave is Australia's premier multi-genre music extravaganza, set to electrify Wollongong Plaza, NSW from August 16-18, 2025. This three-day celebration of sound and culture brings together the best of rock, pop, electronic, and hip-hop music, featuring a stellar lineup including Courtney Barnett, Tame Impala, The KID Laroi, Flume, and Hilltop Hoods.</p>        
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button type="button" class="btn btn-light">Learn more</button>
+            </div>
+        </div>
+
+        <!-- Search & Category Filter -->
+        <div class="container mt-4">
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search events..." aria-label="Search">
+                <button class="btn btn-outline-primary" type="submit">Search</button>
+            </form>
+            <div class="dropdown mt-3">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    Browse by Genre
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#">Rock/Alternative</a></li>
+                    <li><a class="dropdown-item" href="#">Pop/Folk</a></li>
+                    <li><a class="dropdown-item" href="#">Hip-hop/R&B</a></li>
+                    <li><a class="dropdown-item" href="#">Electronic/Dance</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Upcoming Events Section -->
+        <div class="container mt-5">
+            <h2>Upcoming Events</h2>
+            <div class="row">
+                <!-- Event 1 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/courtney.jpg" class="card-img-top" alt="Event 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Rock/Alternative</h5>
+                            <p class="card-text">Location: Melbourne | Status: Open</p>
+                            <a href="event_details.html" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/flume.jpg" class="card-img-top" alt="Event 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Pop/Folk</h5>
+                            <p class="card-text">Location: Sydney | Status: Sold Out</p>
+                            <a href="event_details.html" class="btn btn-warning disabled">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Event 3 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/dean.jpg" class="card-img-top" alt="Event 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Hip-hop/R&B</h5>
+                            <p class="card-text">Location: Brisbane | Status: Open</p>
+                            <a href="event_details.html" class="btn btn-primary">View Details</a>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div id="event-details.html">
-                <ul class="nav nav-tabs">
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Genres</a>
-                    </li>
-                    <a class="nav-link active" aria-current="page" href="Rock/Alternative">Indie</a>
+        <div id="event-details.html">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                <a class="nav-link" href="#">Genres</a>
+                </li>
+                <a class="nav-link active" aria-current="page" href="Rock/Alternative">Indie</a>
+            </li>
+            <li class="nav-item">
+                <li class="nav-item">
+                <a class="nav-link" href="#">Dance</a>
                 </li>
                 <li class="nav-item">
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Dance</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Pop</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Rock</a>
-                    </li>
-                </ul>
-                <div class="card-group">
-                    <div class="card">
-                        <img src="img/courtney.jpg" class="card-img-top" alt="Courtney Barnett">
-                        <div class="card-body">
-                            <h5 class="card-title">Courtney Barnett</h5>
-                            <p class="card-text">Genre: Rock/Alternative</p>
-                            <p class="card-text">Event Date: August 18, 2025</p>
-                            <p class="card-text">Event Time: Starts at 7:00pm</p>
-                            <a href="#" class="btn btn-primary">Open</a>
-                        </div>
+                <a class="nav-link" href="#">Pop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Rock</a>
+                </li>
+            </ul>
+            <div class="card-group">
+                <div class="card">
+                    <img src="img/courtney.jpg" class="card-img-top" alt="Courtney Barnett">
+                    <div class="card-body">
+                        <h5 class="card-title">Courtney Barnett</h5>
+                        <p class="card-text">Genre: Rock/Alternative</p>
+                        <p class="card-text">Event Date: August 18, 2025</p>
+                        <p class="card-text">Event Time: Starts at 7:00pm</p>
+                        <a href="#" class="btn btn-primary">Open</a>
                     </div>
-                    <div class="card">
-                        <img src="img/tame impala.jpg" class="card-img-top" alt="Tame Impala">
-                        <div class="card-body">
-                            <h5 class="card-title">Tame Impala</h5>
-                            <p class="card-text">Genre: Psychedelic Rock</p>
-                            <p class="card-text">Event Date: August 17, 2025</p>
-                            <p class="card-text">Event Time: Starts at 8:00pm</p>
-                            <button type="button" class="btn btn-warning">Sold Out</button>
-                        </div>
+                </div>
+                <div class="card">
+                    <img src="img/tame impala.jpg" class="card-img-top" alt="Tame Impala">
+                    <div class="card-body">
+                        <h5 class="card-title">Tame Impala</h5>
+                        <p class="card-text">Genre: Psychedelic Rock</p>
+                        <p class="card-text">Event Date: August 17, 2025</p>
+                        <p class="card-text">Event Time: Starts at 8:00pm</p>
+                        <button type="button" class="btn btn-warning">Sold Out</button>
                     </div>
-                    <div class="card">
-                        <img src="img/goy.jpg" class="card-img-top" alt="Gang of Youths">
-                        <div class="card-body">
-                            <h5 class="card-title">Gang of Youths</h5>
-                            <p class="card-text">Genre: Alternative Rock</p>
-                            <p class="card-text">Event Date: August 16, 2025</p>
-                            <p class="card-text">Sorry, this event is cancelled</p>
-                            <button type="button" class="btn btn-danger">Cancelled</button>
-                        </div>
+                </div>
+                <div class="card">
+                    <img src="img/goy.jpg" class="card-img-top" alt="Gang of Youths">
+                    <div class="card-body">
+                        <h5 class="card-title">Gang of Youths</h5>
+                        <p class="card-text">Genre: Alternative Rock</p>
+                        <p class="card-text">Event Date: August 16, 2025</p>
+                        <p class="card-text">Sorry, this event is cancelled</p>
+                        <button type="button" class="btn btn-danger">Cancelled</button>
                     </div>
                 </div>
             </div>
-
         </div>
-        <!--End of container-->
-      
-    </main>
+        </div>
+        </main>
 
     <!--BODY FOOTER-->
     <footer>
         <div id="footer" class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-1 row-cols-lg-5 py-5 border-top">
-                <div class="col-sm-6 col-md-12 col-lg-4">
-                    <img src="#" height="125px">
-                    <p class="text-body-secondary">&copy; 2024</p>
+                <div class="col-sm-6 col-md-4 col-lg-6">
+                    <img src="img/logo.jpg" height="125px">
+                    <p class="text-body-secondary mt-2">&copy; 2024</p>
                 </div>
             
                 <div class="col-sm-6 col-md-3 col-lg-2">
-                    <h5>Company</h5>
+                    <h5 class="footer-heading">Company</h5>
                     <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About Us</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Privacy Policy</a></li>
+                    <li class="nav-item mb-2"><a href="about_us.html" class="nav-link p-0 text-body-secondary">About Us</a></li>
+                    <li class="nav-item mb-2"><a href="contact_us.html" class="nav-link p-0 text-body-secondary">Contact Us</a></li>
                     </ul>
                 </div>
-            
-                <div class="col-sm-6 col-md-3 col-lg-2 mb-3">
-                    <h5>Find Events</h5>
-                    <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">All Genres</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Indie</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Dance</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pop</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Rock</a></li>
-                    </ul>
-                </div>
-            
+        
                 <div class="col-sm-6 col-md-3 col-lg-2">
-                    <h5>Plan Events</h5>
+                    <h5 class="footer-heading">Plan Events</h5>
                     <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="event-creation.html" class="nav-link p-0 text-body-secondary">Create Events</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Manage Events</a></li>
-                    <li class="nav-item mb-2"><a href="user-booking-history.html" class="nav-link p-0 text-body-secondary">Booking History</a></li>
+                    <li class="nav-item mb-2"><a href="#browse-events" class="nav-link p-0 text-body-secondary">Browse Events</a></li>
+                    <li class="nav-item mb-2"><a href="create_event.html" class="nav-link p-0 text-body-secondary">Create Events</a></li>
+                    <li class="nav-item mb-2"><a href="manage_event.html" class="nav-link p-0 text-body-secondary">Manage Events</a></li>
+                    <li class="nav-item mb-2"><a href="my_bookings.html" class="nav-link p-0 text-body-secondary">Booking History</a></li>
                     </ul>
                 </div>
 
-                <div class="col-sm-6 col-md-3 col-lg-2 mb-3">
-                    <h5>Discover More!</h5>
+                <div class="col-sm-6 col-md-2 col-lg-2 mb-3">
+                    <h5 class="footer-heading">Discover More!</h5>
                     <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                        <button class="btn btn-primary" type="button">Register Now</button>
+                        <button class="btn btn-primary" type="button" onclick="document.location='register.html'">Register Now</button>
                     </div>
                 </div>
                 </div>
@@ -347,7 +235,10 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!--Boostrap CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
+
+
