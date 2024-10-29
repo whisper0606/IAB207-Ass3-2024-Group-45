@@ -9,7 +9,7 @@ from . import db
 auth_bp = Blueprint('auth', __name__)
 
 # register function
-@authbp.route('/register', methods=['GET', 'POST'])
+@auth_bp.route('/register', methods=['GET', 'POST'])
 def register():
     register = RegisterForm()
     #the validation of form is fine, HTTP request is POST
@@ -39,7 +39,7 @@ def register():
 
 
 
-@authbp.route('/login', methods=['GET', 'POST'])
+@auth_bp.route('/login', methods=['GET', 'POST'])
 def login():
     login_form = LoginForm()
     error = None
@@ -66,7 +66,7 @@ def login():
 
 
 
-@authbp.route('/logout')
+@auth_bp.route('/logout')
 @login_required
 def logout():
     logout_user()
