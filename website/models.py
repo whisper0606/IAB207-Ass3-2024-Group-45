@@ -26,19 +26,17 @@ class Event(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), index=True, unique=True, nullable=False)
-    description = db.Column(db.String(512), index=True, nullable=False)
-    date = db.Column(db.Date, nullable=False)
-    start_time = db.Column(db.Time, nullable=False)
-    end_time = db.Column(db.Time, nullable=False)
+    datetime = db.Column(db.DateTime, nullable=False)
     venue = db.Column(db.String(100), nullable=False)
     genre = db.Column(db.Enum(Genre), nullable=False)
+    ticket_price = db.Column(db.Integer, nullable=False)
     image = db.Column(db.String(400))
     creator_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     comments = db.relationship('Comment', backref='event')
     orders = db.relationship('Order', backref='event')
 
     def __repr__(self):
-        return f"Event: {self.name}"
+        return f"Event\nName: {self.name}\nDateTime: {self.datetime}\nVenue: {self.venue}\nGenre: {self.genre}\nTicket Price: {self.ticket_price}\nCreator ID: {self.creator_id}"
 
 class Comment(db.Model):
     __tablename__ = 'comments'
