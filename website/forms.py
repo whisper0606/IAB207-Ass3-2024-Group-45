@@ -28,3 +28,7 @@ class CreateEventForm(FlaskForm): # This form is for creating events
     event_genre=SelectField("Genre", choices=[("ROCK_ALT", "Rock/Alternative"), ("POP","Pop"), ("EDM", "Electronic/Dance"), ("HIPHOP_RNB","Hip-Hop/R&B")], validators=[InputRequired()])
     event_image=FileField("Image", render_kw={"disabled": True}) # File uploads disabled because i'm a lazy fuck - will :)
     create_event=SubmitField("Create Event")
+
+class CreateCommentForm(FlaskForm):
+    comment_text=StringField("Comment", validators=[InputRequired()])
+    post_comment=SubmitField("Post Comment")
