@@ -80,8 +80,13 @@ footer{
 footer a,
 footer p,
 footer h5,
-footer .nav-link {
-    color: white !important;
+footer .nav-link,
+footer .text-body-secondary {
+    color: whitesmoke !important;
+}
+
+footer a:hover{
+    color: black !important;
 }
 
 .footer-heading{
@@ -97,3 +102,4 @@ button{
     border-radius: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
 }
+
