@@ -1,10 +1,10 @@
 from flask import Blueprint, flash, render_template, request, url_for, redirect
 from flask_bcrypt import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user
-from .models import User, Event, Comment
-from .forms import CreateEventForm, CreateCommentForm
+from .models import User, Event, Comment, Order
+from .forms import CreateEventForm, CreateCommentForm, PlaceOrderForm
 from . import db
-from datetime import datetime # holy shit that's a lot of imports 
+from datetime import datetime 
 
 event_bp = Blueprint('event', __name__)
 
@@ -37,7 +37,7 @@ def create_event():
     
     return render_template('user.html', form=form)  # Render the form template
 
-@event_bp.route('/comment', methods=['GET','POST'])
+@event_bp.route('/comment', methods=['GET','POST']) # This is going to need to be replaced and linked to events, hopefully this will be somewhat useful
 @login_required
 def comment():
     form = CreateCommentForm()
@@ -54,6 +54,26 @@ def comment():
         db.session.add(new_comment)
         db.session.commit()
         flash("comment added", "success")
-    return render_template('comment_test.html', form=form)
+    return render_template('form_test.html', form=form)
+
+@event_bp.route('/order', methods=['GET','POST'])
+@login_required
+def order():
+    form = PlaceOrderForm()
+
+    if form.validate_on_submit():
+        user_id = current_user.id
+        new_order = Order(
+            quantity=form.ticket_quantity.data,
+            type=form.ticket_type.data,
+            user_id=user_id,
+            event_id=1 # set to one for testing purposes, please change once you link orders to events :)
+        )
+
+        db.session.add(new_order)
+        db.session.commit()
+        flash("order placed", "success")
+    return render_template("form_test.html", form=form)
+
 
 
