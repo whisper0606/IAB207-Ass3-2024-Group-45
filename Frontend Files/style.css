@@ -1,0 +1,86 @@
+* {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+main {
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    min-height: 100vh;
+    color: black; /* Darker text color for better readability */
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.5); /* More transparent white background */
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/*Styles the 'Music' nav logo*/
+.logo-nav{
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+/*Makes 'LIVE' part of the nav yellow*/
+.logo-nav span{
+    color: yellow;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(37, 35, 35, 0.1); /* Subtle shadow for navbar */
+    background-color: rgb(10, 72, 241) !important;
+}
+
+.navbar a{
+    color: white;
+}
+
+nav li{
+    font-weight: bold;
+    color: black;
+}
+
+.active{
+    background-color: white;
+    border-radius: 15px;
+
+}
+
+nav a:hover{
+    background-color: white;
+    border-radius: 15px;
+}
+
+.logo-nav:hover{
+    background-color: rgb(10, 72, 241) !important;
+    color: white;
+    
+}
+
+
+
+.carousel-item{
+    height: 35rem;
+}
+
+
+.card {
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
+}
+
+footer{
+    background-color: white;
+    box-shadow: 1px 2px 10px 1px rgba(0,0,0,0.2);
+
+}
+
+.footer-heading{
+    font-weight: 500;
+}
+
