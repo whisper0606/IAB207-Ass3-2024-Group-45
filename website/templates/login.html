@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    <div class="container mt-5 form-container">
+        <div class="row">
+            <div class="col-sm-3 col-md-4 col-lg-6 mb-3">
+                <h2 class="mb-3">Login</h2>
+                <form method="POST" action="{{ url_for('auth.login') }}">
+                    {{ form.hidden_tag() }}
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Username</label>
+                        {{ form.email(class="form-control", placeholder="Enter email") }}
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        {{ form.password(class="form-control", placeholder="Enter password") }}
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <ul class="alert alert-danger mt-3">
+                            {% for message in messages %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

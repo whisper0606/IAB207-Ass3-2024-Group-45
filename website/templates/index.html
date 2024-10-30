@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!--MAIN CONTENT-->
+<main>
+    <div class="content-wrapper mb-5">
+        <!-- Carousel -->
+        <div id="home" class="carousel slide mt-3" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#eventCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#eventCarousel" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#eventCarousel" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#eventCarousel" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{ url_for('static', filename='img/dance.jpg') }}" class="d-block w-100" alt="dance">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ url_for('static', filename='img/pop.jpg') }}" class="d-block w-100" alt="pop">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ url_for('static', filename='img/hiphop.jpg') }}" class="d-block w-100" alt="hiphop">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ url_for('static', filename='img/rock.jpg') }}" class="d-block w-100" alt="rock">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+
+
+        <!-- MAIN HEADING -->
+        <div class="container text-center mt-5">
+            <h1 id="browse-events">Where Music Meets Magic!</h1>
+            <p class="lead">Festival Wave is Australia's premier multi-genre music extravaganza, set to electrify
+                Wollongong Plaza, NSW from August 16-18, 2025. This three-day celebration of sound and culture
+                brings together the best of rock, pop, electronic, and hip-hop music, featuring a stellar lineup
+                including Courtney Barnett, Tame Impala, The KID Laroi, Flume, and Hilltop Hoods.</p>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="container mt-4">
+            <div class="dropdown mt-3">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Browse by Genre
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#">Rock/Alternative</a></li>
+                    <li><a class="dropdown-item" href="#">Pop/Folk</a></li>
+                    <li><a class="dropdown-item" href="#">Hip-hop/R&B</a></li>
+                    <li><a class="dropdown-item" href="#">Electronic/Dance</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Upcoming Events Section -->
+        <div class="container mt-5">
+            <h2>Upcoming Events</h2>
+            <div class="row">
+                <!-- Event 1 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/courtney.jpg" class="card-img-top" alt="Event 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Rock/Alternative</h5>
+                            <p class="card-text">Location: Melbourne | Status: Open</p>
+                            <a href="event_details.html" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/flume.jpg" class="card-img-top" alt="Event 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Pop/Folk</h5>
+                            <p class="card-text">Location: Sydney | Status: Sold Out</p>
+                            <a href="event_details.html" class="btn btn-warning disabled">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Event 3 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/dean.jpg" class="card-img-top" alt="Event 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Hip-hop/R&B</h5>
+                            <p class="card-text">Location: Brisbane | Status: Open</p>
+                            <a href="event_details.html" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="event-details.html">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Genres</a>
+                </li>
+                <a class="nav-link active" aria-current="page" href="Rock/Alternative">Indie</a>
+                </li>
+                <li class="nav-item">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Dance</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Rock</a>
+                </li>
+            </ul>
+            <div class="card-group">
+                <div class="card">
+                    <img src="img/courtney.jpg" class="card-img-top" alt="Courtney Barnett">
+                    <div class="card-body">
+                        <h5 class="card-title">Courtney Barnett</h5>
+                        <p class="card-text">Genre: Rock/Alternative</p>
+                        <p class="card-text">Event Date: August 18, 2025</p>
+                        <p class="card-text">Event Time: Starts at 7:00pm</p>
+                        <a href="#" class="btn btn-primary">Open</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/tame impala.jpg" class="card-img-top" alt="Tame Impala">
+                    <div class="card-body">
+                        <h5 class="card-title">Tame Impala</h5>
+                        <p class="card-text">Genre: Psychedelic Rock</p>
+                        <p class="card-text">Event Date: August 17, 2025</p>
+                        <p class="card-text">Event Time: Starts at 8:00pm</p>
+                        <button type="button" class="btn btn-warning">Sold Out</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/goy.jpg" class="card-img-top" alt="Gang of Youths">
+                    <div class="card-body">
+                        <h5 class="card-title">Gang of Youths</h5>
+                        <p class="card-text">Genre: Alternative Rock</p>
+                        <p class="card-text">Event Date: August 16, 2025</p>
+                        <p class="card-text">Sorry, this event is cancelled</p>
+                        <button type="button" class="btn btn-danger">Cancelled</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

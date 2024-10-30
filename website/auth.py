@@ -14,26 +14,28 @@ def register():
     register = RegisterForm()
     #the validation of form is fine, HTTP request is POST
     if (register.validate_on_submit()==True):
-            #get username, password and email from the form
-            uname = register.user_name.data
-            pwd = register.password.data
+            #get user's name, password, email and phone from the form
+            fname = register.first_name.data
+            lname = register.last_name.data
             email = register.email.data
+            phone_number = register.phone_number.data
+            password = register.password.data
             #check if a user exists
-            user = db.session.scalar(db.select(User).where(User.name==uname))
+            user = db.session.scalar(db.select(User).where(User.email==email))
             if user:#this returns true when user is not None
-                flash('Username already exists, please try another')
+                flash('Email already registered, please try another')
                 return redirect(url_for('auth.register'))
             # don't store the password in plaintext!
-            pwd_hash = generate_password_hash(pwd)
+            password_hash = generate_password_hash(password)
             #create a new User model object
-            new_user = User(name=uname, password_hash=pwd_hash, emailid=email)
+            new_user = User(first_name=fname, last_name=lname, password_hash=password_hash, email=email, phone_number=phone_number)
             db.session.add(new_user)
             db.session.commit()
             #commit to the database and redirect to HTML page
             return redirect(url_for('main.index'))
     #the else is called when the HTTP request calling this page is a GET
     else:
-        return render_template('user.html', form=register, heading='Register')
+        return render_template('register.html', form=register, heading='Register')
 
 @auth_bp.route('/login', methods=['GET', 'POST'])
 def login():
@@ -46,17 +48,17 @@ def login():
         user = db.session.scalar(db.select(User).where(User.name==user_name))
         #if there is no user with that name
         if user is None:
-            error = 'Incorrect username'#could be a security risk to give this much info away
+            error = 'Incorrect username or password.'#could be a security risk to give this much info away
         #check the password - notice password hash function
         elif not check_password_hash(user.password_hash, password): # takes the hash and password
-            error = 'Incorrect password'
+            error = 'Incorrect username or password'
         if error is None:
             #all good, set the login_user of flask_login to manage the user
             login_user(user)
             return redirect(url_for('main.index'))
         else:
             flash(error)
-    return render_template('user.html', form=login_form, heading='Login')
+    return render_template('login.html', form=login_form, heading='Login')
 
 @auth_bp.route('/logout')
 @login_required

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MusicLIVE - Event Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--HEADER-->
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand logo-nav" href="index.html">Music<span>LIVE</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#browse-events">Browse Events</a></li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--MAIN CONTENT-->
+    <main>
+
+            <!-- MAIN HEADER -->
+            <div class="container text-center mt-5">
+                <h1>Festival Wave: Where Music Meets Magic!</h1>
+                <p class="lead">Australia's premier multi-genre music extravaganza, set to electrify Wollongong Plaza, NSW from August 16-18, 2025. Featuring Courtney Barnett, Tame Impala, The KID Laroi, Flume, and Hilltop Hoods.</p>
+            </div>
+
+            <!-- Event Details Section -->
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="img/logo.jpg" class="img-fluid rounded" alt="Festival Image">
+                    </div>
+                    <div class="col-md-6">
+                        <h2>Event Details</h2>
+                        <p><strong>Date & Time:</strong> August 16-18, 2025 | Starts at 7:00 PM</p>
+                        <p><strong>Location:</strong> Wollongong Plaza, NSW</p>
+                        <p><strong>Category:</strong> Multi-genre Festival</p>
+                        <p><strong>Status:</strong> Open</p>
+                        <p><strong>Prices:</strong> Starting from $50</p>
+                        <button class="btn btn-primary mt-2">Book Tickets Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comment Section -->
+            <div class="container mt-5">
+                <h3>Comments</h3>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Johnny Bravo</h5>
+                        <p class="card-text">The lineup looks great!</p>
+                        <p class="card-text"><small class="text-muted">Posted 1 hour ago</small></p>
+                    </div>
+                </div>
+
+                <form class="mt-4">
+                    <label for="comment" class="form-label">Leave a comment</label>
+                    <textarea class="form-control" id="comment" placeholder="Add your comment..." rows="3"></textarea>
+                    <button type="submit" class="btn btn-primary mt-2">Post Comment</button>
+                </form>
+            </div>
+
+            <!-- Booking Section -->
+            <div class="container mt-5">
+                <h2>Book Tickets</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="ticketType" class="form-label">Ticket Type</label>
+                        <select class="form-select" id="ticketType">
+                            <option value="general">General Admission</option>
+                            <option value="vip">VIP</option>
+                        </select>
+                        <div class="mb-3">
+                            <label for="eventCategory" class="form-label">Genre</label>
+                            <select class="form-select" id="eventCategory" required>
+                                <option value="">Select a genre</option>
+                                <option value="rock">Rock/Alternative</option>
+                                <option value="pop">Pop</option>
+                                <option value="electronic">Electronic/Dance</option>
+                                <option value="hiphop">Hip-Hop/R&B</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ticketQuantity" class="form-label">Quantity</label>
+                        <input type="number" class="form-control" id="ticketQuantity" min="1" max="10" value="1">
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-5">Confirm Booking</button>
+                </form>
+            </div>
+    </main>
+
+    <!--BODY FOOTER-->
+    <footer>
+        <div id="footer" class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-1 row-cols-lg-5 py-5 border-top">
+                <div class="col-sm-6 col-md-4 col-lg-6">
+                    <a href="index.html"><img src="music-live-logo.png" height="115px"></a>
+                    <p class="text-body-secondary mt-2">&copy; 2024 MusicLIVE</p>
+                </div>
+            
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    <h5 class="footer-heading">Company</h5>
+                    <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="about_us.html" class="nav-link p-0 text-body-secondary">About Us</a></li>
+                    <li class="nav-item mb-2"><a href="contact_us.html" class="nav-link p-0 text-body-secondary">Contact Us</a></li>
+                    </ul>
+                </div>
+        
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    <h5 class="footer-heading">Plan Events</h5>
+                    <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#browse-events" class="nav-link p-0 text-body-secondary">Browse Events</a></li>
+                    <li class="nav-item mb-2"><a href="create_event.html" class="nav-link p-0 text-body-secondary">Create Events</a></li>
+                    <li class="nav-item mb-2"><a href="manage_event.html" class="nav-link p-0 text-body-secondary">Manage Events</a></li>
+                    <li class="nav-item mb-2"><a href="my_bookings.html" class="nav-link p-0 text-body-secondary">Booking History</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-6 col-md-2 col-lg-2 mb-3">
+                    <h5 class="footer-heading">Discover More!</h5>
+                    <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                        <button class="btn btn-primary" type="button" onclick="document.location='register.html'">Register Now</button>
+                    </div>
+                </div>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+
+    <!--Boostrap CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
