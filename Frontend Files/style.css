@@ -89,8 +89,7 @@ footer a{
     font-weight: 500;
 }
 
-.footer-button{
-    color:black;
+button{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
 
 }
