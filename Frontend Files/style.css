@@ -81,7 +81,10 @@ footer{
     color: white;
 }
 
-footer a{
+footer a,
+footer p,
+footer h5,
+footer .nav-link {
     color: white !important;
 }
 
