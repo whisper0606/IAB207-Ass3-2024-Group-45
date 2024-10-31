@@ -46,22 +46,18 @@ nav li{
 }
 
 .active{
-    background-color: white;
+    background-color: #0D6EFD;
     border-radius: 15px;
+    color:white !important;
 
 }
 
 nav a:hover{
-    background-color: white;
+    background-color: #0D6EFD;
     border-radius: 15px;
+    color:white !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
 }
-
-.logo-nav:hover{
-    background-color: rgb(10, 72, 241) !important;
-    color: white;
-    
-}
-
 
 
 .carousel-item{
@@ -81,8 +77,16 @@ footer{
     color: white;
 }
 
-footer a{
-    color: white !important;
+footer a,
+footer p,
+footer h5,
+footer .nav-link,
+footer .text-body-secondary {
+    color: whitesmoke !important;
+}
+
+footer a:hover{
+    color: black !important;
 }
 
 .footer-heading{
@@ -91,5 +95,11 @@ footer a{
 
 button{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
-
 }
+
+#footer-logo:hover{
+    background-color: #0D6EFD;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
+}
+
