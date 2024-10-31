@@ -1,5 +1,5 @@
 # import flask - from 'package' import 'Class'
-from flask import Flask 
+from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
@@ -20,7 +20,7 @@ def create_app():
     db.init_app(app)
 
     Bootstrap(app)
-    
+
     # initialise the login manager
     login_manager = LoginManager()
     
@@ -35,6 +35,11 @@ def create_app():
     @login_manager.user_loader
     def load_user(user_id):
        return db.session.scalar(db.select(User).where(User.id==user_id))
+    
+    @app.errorhandler(404) 
+    # inbuilt function which takes error as parameter 
+    def not_found(e): 
+      return render_template("error.html", error=e)
 
     from . import views
     app.register_blueprint(views.main_bp)
@@ -44,5 +49,5 @@ def create_app():
 
     from. import events
     app.register_blueprint(events.event_bp)
-    
+   
     return app
