@@ -17,7 +17,7 @@ def create_app():
     app.secret_key = 'somesecretkey'
     # set the app configuration data 
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sitedata.sqlite'
-    app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'event_images')
+    app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'static/event_images')
     # initialise db with flask app
     db.init_app(app)
 

@@ -27,11 +27,17 @@ class Event(db.Model):
         EDM = "Electronic/Dance"
         HIPHOP_RNB = "Hip-Hop/R&B"
 
+        def __str__(self):
+            return self.value
+
     class Status(Enum):
         OPEN = "Open"
         SOLDOUT = "Sold Out"
         CANCELLED = "Cancelled"
         INACTIVE = "Inactive"
+
+        def __str__(self):
+            return self.value
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), index=True, unique=True, nullable=False)

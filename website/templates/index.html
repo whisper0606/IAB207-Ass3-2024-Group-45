@@ -40,8 +40,6 @@
             </button>
         </div>
 
-
-
         <!-- MAIN HEADING -->
         <div class="container text-center mt-5">
             <h1 id="browse-events">Where Music Meets Magic!</h1>
@@ -67,100 +65,44 @@
             </div>
         </div>
 
-        <!-- Upcoming Events Section -->
         <div class="container mt-5">
             <h2>Upcoming Events</h2>
+
+            <!-- Dynamically generated rows of event cards -->
             <div class="row">
-                <!-- Event 1 -->
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="img/courtney.jpg" class="card-img-top" alt="Event 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Rock/Alternative</h5>
-                            <p class="card-text">Location: Melbourne | Status: Open</p>
-                            <a href="event_details.html" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                </div>
+                {% for event in events %}
+                {% if loop.index0 % 3 == 0 and not loop.first %}
+            </div>
+            <div class="row mt-4">
+                {% endif %}
 
-                <!-- Event 2 -->
                 <div class="col-md-4">
-                    <div class="card">
-                        <img src="img/flume.jpg" class="card-img-top" alt="Event 2">
+                    <div class="card card-event">
+                        <img src="{{ url_for('static', filename='event_images/' + event.image) }}"
+                            class="card-img-top fixed-height" alt="{{ event.name }}">
                         <div class="card-body">
-                            <h5 class="card-title">Pop/Folk</h5>
-                            <p class="card-text">Location: Sydney | Status: Sold Out</p>
-                            <a href="event_details.html" class="btn btn-warning disabled">View Details</a>
+                            <h5 class="card-title">{{ event.name }}</h5>
+                            <p class="card-text">Location: {{ event.venue }}<br>Status: {{ event.status }}</p>
+                            {% if event.status == Event.Status.OPEN %}
+                            <a href="{{ url_for('main.index', event_id=event.id) }}" class="btn btn-primary">View
+                                Details</a>
+                            {% elif event.status == Event.Status.SOLDOUT %}
+                            <a href="{{ url_for('main.index', event_id=event.id) }}" class="btn btn-warning">Sold
+                                Out</a>
+                            {% elif event.status == Event.Status.CANCELLED %}
+                            <a href="{{ url_for('main.index', event_id=event.id) }}"
+                                class="btn btn-danger">Cancelled</a>
+                            {% elif event.status == Event.Status.INACTIVE %}
+                            <a href="{{ url_for('main.index', event_id=event.id) }}"
+                                class="btn btn-secondary">Inactive</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
-
-                <!-- New Event 3 -->
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="img/dean.jpg" class="card-img-top" alt="Event 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Hip-hop/R&B</h5>
-                            <p class="card-text">Location: Brisbane | Status: Open</p>
-                            <a href="event_details.html" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
 
-        <div id="event-details.html">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Genres</a>
-                </li>
-                <a class="nav-link active" aria-current="page" href="Rock/Alternative">Indie</a>
-                </li>
-                <li class="nav-item">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Dance</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pop</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Rock</a>
-                </li>
-            </ul>
-            <div class="card-group">
-                <div class="card">
-                    <img src="img/courtney.jpg" class="card-img-top" alt="Courtney Barnett">
-                    <div class="card-body">
-                        <h5 class="card-title">Courtney Barnett</h5>
-                        <p class="card-text">Genre: Rock/Alternative</p>
-                        <p class="card-text">Event Date: August 18, 2025</p>
-                        <p class="card-text">Event Time: Starts at 7:00pm</p>
-                        <a href="#" class="btn btn-primary">Open</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="img/tame impala.jpg" class="card-img-top" alt="Tame Impala">
-                    <div class="card-body">
-                        <h5 class="card-title">Tame Impala</h5>
-                        <p class="card-text">Genre: Psychedelic Rock</p>
-                        <p class="card-text">Event Date: August 17, 2025</p>
-                        <p class="card-text">Event Time: Starts at 8:00pm</p>
-                        <button type="button" class="btn btn-warning">Sold Out</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="img/goy.jpg" class="card-img-top" alt="Gang of Youths">
-                    <div class="card-body">
-                        <h5 class="card-title">Gang of Youths</h5>
-                        <p class="card-text">Genre: Alternative Rock</p>
-                        <p class="card-text">Event Date: August 16, 2025</p>
-                        <p class="card-text">Sorry, this event is cancelled</p>
-                        <button type="button" class="btn btn-danger">Cancelled</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </main>
 
 {% endblock %}
