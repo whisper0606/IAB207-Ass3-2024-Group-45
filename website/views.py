@@ -10,7 +10,13 @@ main_bp = Blueprint('main', __name__)
 
 @main_bp.route('/')
 def index():
-    events = Event.query.limit(9).all() # retrieve up to nine events
+    category = request.args.get('category')
+    if category:
+        genre_enum = Event.Genre[category]
+        events = Event.query.filter_by(genre=genre_enum).all()
+    else:
+        events = Event.query.limit(9).all() # retrieve up to nine events
+
     for event in events:
         print(f"Event Name: {event.name}, Status: {event.status}")
     return render_template("index.html", events=events, Event=Event)
