@@ -62,8 +62,6 @@ nav a:hover{
     
 }
 
-
-
 .carousel-item{
     height: 35rem;
 }
@@ -81,9 +79,15 @@ footer{
     color: white;
 }
 
-footer a{
+footer a, p, .text-body-secondary{
     color: white !important;
 }
+
+footer a:hover{
+    color: black !important;
+}
+
+
 
 .footer-heading{
     font-weight: 500;
