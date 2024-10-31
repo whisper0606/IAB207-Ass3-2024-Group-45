@@ -42,10 +42,10 @@ def login():
     login_form = LoginForm()
     error = None
     if(login_form.validate_on_submit()==True):
-        #get the username and password from the database
-        user_name = login_form.user_name.data
+        #get the email and password from the database
+        email = login_form.email.data
         password = login_form.password.data
-        user = db.session.scalar(db.select(User).where(User.name==user_name))
+        user = db.session.scalar(db.select(User).where(User.email==email))
         #if there is no user with that name
         if user is None:
             error = 'Incorrect username or password.'#could be a security risk to give this much info away
