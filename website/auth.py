@@ -48,7 +48,7 @@ def login():
         user = db.session.scalar(db.select(User).where(User.email==email))
         #if there is no user with that name
         if user is None:
-            error = 'Incorrect username or password.'#could be a security risk to give this much info away
+            error = 'Incorrect username or password.'#changed error to reduce security risk, too lazy to change rest of code - will
         #check the password - notice password hash function
         elif not check_password_hash(user.password_hash, password): # takes the hash and password
             error = 'Incorrect username or password'

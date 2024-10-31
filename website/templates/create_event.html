@@ -1,44 +1,47 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="content-wrapper">
-        <div id="create-event" class="p-5 mb-5">
-            <h2 class="text-center p-5 mb-5">Create Event</h2>
-            <form>
-                <div class="mb-3">
-                    <label for="eventName" class="form-label">Event Name</label>
-                    <input type="text" class="form-control" id="eventName" required>
-                </div>
-                <div class="mb-3">
-                    <label for="eventDateTime" class="form-label">Event Date and Time</label>
-                    <input type="datetime-local" class="form-control" id="eventDateTime" required>
-                </div>
-                <div class="mb-3">
-                    <label for="eventVenue" class="form-label">Venue</label>
-                    <input type="text" class="form-control" id="eventVenue" required>
-                </div>
-                <div class="mb-3">
-                    <label for="eventPrice" class="form-label">Ticket Price</label>
-                    <input type="number" class="form-control" id="eventPrice" required>
-                </div>
-                <div class="mb-3">
-                    <label for="eventGenre" class="form-label">Genre</label>
-                    <select class="form-select" id="eventGenre" required>
-                        <option value="">Select a category</option>
-                        <option value="rock">Rock/Alternative</option>
-                        <option value="pop">Pop/Folk</option>
-                        <option value="electronic">Electronic/Dance</option>
-                        <option value="hiphop">Hip-Hop/R&B</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="eventImage" class="form-label">Event Image</label>
-                    <input type="file" class="form-control" id="eventImage" accept="image/*" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Create Event</button>
-            </form>
-        </div>
-
+<div class="content-wrapper">
+    <div id="create-event" class="p-5 mb-5">
+        <h2 class="text-center p-5 mb-5">Create Event</h2>
+        <form method="POST" , action="{{ url_for('event.create_event') }}" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <div class="mb-3">
+                <label for="eventName" class="form-label">Event Name</label>
+                {{ form.event_name(class="form-control", placeholder="Enter event name") }}
+            </div>
+            <div class="mb-3">
+                <label for="event_datetime" class="form-label">Event Date and Time</label>
+                {{ form.event_datetime(class="form-control", placeholder="Enter date and time") }}
+            </div>
+            <div class="mb-3">
+                <label for="event_venue" class="form-label">Venue</label>
+                {{ form.event_venue(class="form-control", placeholder="Enter venue") }}
+            </div>
+            <div class="mb-3">
+                <label for="event_ticket_price" class="form-label">Ticket Price</label>
+                {{ form.event_ticket_price(class="form-control", placeholder="Enter ticket price") }}
+            </div>
+            <div class="mb-3">
+                <label for="event_genre" class="form-label">Genre</label>
+                {{ form.event_genre(class="form-control", placeholder="Select genre") }}
+            </div>
+            <div class="mb-3">
+                <label for="event_image" class="form-label">Event Image</label>
+                {{ form.event_image(class="form-control") }}
+            </div>
+            <button type="submit" class="btn btn-primary">Create Event</button>
+        </form>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class="alert alert-danger mt-3">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
     </div>
-{% endblock %}
 
+</div>
+{% endblock %}

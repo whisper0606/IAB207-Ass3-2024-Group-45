@@ -1,10 +1,12 @@
-from flask import Blueprint, flash, render_template, request, url_for, redirect
+from flask import Blueprint, flash, render_template, request, url_for, redirect, current_app
 from flask_bcrypt import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user
 from .models import User, Event, Comment, Order
 from .forms import CreateEventForm, CreateCommentForm, PlaceOrderForm
 from . import db
+from werkzeug.utils import secure_filename
 from datetime import datetime 
+import os
 
 event_bp = Blueprint('event', __name__)
 
@@ -17,6 +19,12 @@ def create_event():
     if form.validate_on_submit():  # If the form is submitted and valid
         # Grab the creator_id from the currently logged-in user
         creator_id = current_user.id  # get the user id from the session
+
+        image=form.event_image.data # save the image to the server 
+        print(type(image))
+        filename=secure_filename(image.filename)
+        image.save(os.path.join(current_app.config['UPLOAD_FOLDER'], filename))
+
         
         # Create the new event instance
         new_event = Event(
@@ -25,6 +33,8 @@ def create_event():
             venue=form.event_venue.data,
             ticket_price=form.event_ticket_price.data,
             genre=form.event_genre.data,
+            status="OPEN",
+            image=filename,
             creator_id=creator_id
         )
         
@@ -32,7 +42,7 @@ def create_event():
         db.session.add(new_event)
         db.session.commit()
         
-        #flash('Event created successfully!')
+        flash('Event created successfully!')
         return redirect(url_for('main.index'))  # Redirect to a suitable page, like the homepage or event list
     
     return render_template('create_event.html', form=form)  # Render the form template
