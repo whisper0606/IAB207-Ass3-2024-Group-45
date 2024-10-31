@@ -85,16 +85,16 @@
                             <h5 class="card-title">{{ event.name }}</h5>
                             <p class="card-text">Location: {{ event.venue }}<br>Genre: {{ event.genre }}<br>Status: {{ event.status }}</p>
                             {% if event.status == Event.Status.OPEN %}
-                            <a href="{{ url_for('main.index', event_id=event.id) }}" class="btn btn-primary">View
+                            <a href="{{ url_for('event.show', id=event.id) }}" class="btn btn-primary">View
                                 Details</a>
                             {% elif event.status == Event.Status.SOLDOUT %}
-                            <a href="{{ url_for('main.index', event_id=event.id) }}" class="btn btn-warning">Sold
+                            <a href="{{ url_for('event.show', id=event.id) }}" class="btn btn-warning">Sold
                                 Out</a>
                             {% elif event.status == Event.Status.CANCELLED %}
-                            <a href="{{ url_for('main.index', event_id=event.id) }}"
+                            <a href="{{ url_for('event.show', id=event.id) }}"
                                 class="btn btn-danger">Cancelled</a>
                             {% elif event.status == Event.Status.INACTIVE %}
-                            <a href="{{ url_for('main.index', event_id=event.id) }}"
+                            <a href="{{ url_for('event.show', id=event.id) }}"
                                 class="btn btn-secondary">Inactive</a>
                             {% endif %}
                         </div>

@@ -85,5 +85,11 @@ def order():
         flash("order placed", "success")
     return render_template("form_test.html", form=form)
 
+@event_bp.route('/show/<id>')
+def show(id):
+    event = db.session.scalar(db.select(Event).where(Event.id==id))
+    # create the comment form
+    cform = CreateCommentForm()    
+    return render_template('event_details.html', event=event, form=cform)
 
 
