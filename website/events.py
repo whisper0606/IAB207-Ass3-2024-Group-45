@@ -45,7 +45,7 @@ def create_event():
         flash('Event created successfully!')
         return redirect(url_for('main.index'))  # Redirect to a suitable page, like the homepage or event list
     
-    return render_template('create_event.html', form=form)  # Render the form template
+    return render_template('create_event.html', form=form, title="MusicLIVE | Create Event")  # Render the form template
 
 @event_bp.route('/comment', methods=['GET','POST']) # This is going to need to be replaced and linked to events, hopefully this will be somewhat useful
 @login_required
@@ -89,7 +89,7 @@ def order():
 def show(id):
     event = db.session.scalar(db.select(Event).where(Event.id==id))
     # create the comment form
-    cform = CreateCommentForm()    
-    return render_template('event_details.html', event=event, form=cform)
-
+    cform = CreateCommentForm()
+    bform = PlaceOrderForm()
+    return render_template('event_details.html', event=event, cform=cform, bform=bform)
 
