@@ -19,4 +19,4 @@ def index():
 
     for event in events:
         print(f"Event Name: {event.name}, Status: {event.status}")
-    return render_template("index.html", events=events, Event=Event)
+    return render_template("index.html", events=events, Event=Event, title="MusicLIVE | Home")

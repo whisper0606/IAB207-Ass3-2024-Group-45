@@ -35,7 +35,7 @@ def register():
             return redirect(url_for('main.index'))
     #the else is called when the HTTP request calling this page is a GET
     else:
-        return render_template('register.html', form=register, heading='Register')
+        return render_template('register.html', form=register, heading='Register', title="MusicLIVE | Register")
 
 @auth_bp.route('/login', methods=['GET', 'POST'])
 def login():
@@ -58,7 +58,7 @@ def login():
             return redirect(url_for('main.index'))
         else:
             flash(error)
-    return render_template('login.html', form=login_form, heading='Login')
+    return render_template('login.html', form=login_form, heading='Login', title="MusicLIVE | Login")
 
 @auth_bp.route('/logout')
 @login_required
