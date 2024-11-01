@@ -28,7 +28,7 @@ class CreateEventForm(FlaskForm): # This form is for creating events
     event_venue=StringField("Venue", validators=[InputRequired()])
     event_ticket_price=IntegerField("Ticket Price", validators=[InputRequired()])
     event_genre=SelectField("Genre", choices=[("ROCK_ALT", "Rock/Alternative"), ("POP_FOLK","Pop/Folk"), ("EDM", "Electronic/Dance"), ("HIPHOP_RNB","Hip-Hop/R&B")], validators=[InputRequired()])
-    event_image=FileField("Image", validators=[DataRequired(), FileAllowed(['jpg'], '.jpg only!')])
+    event_image=FileField("Image", validators=[DataRequired(), FileAllowed(['jpg','png','jpeg'])])
     create_event=SubmitField("Create Event")
 
 class CreateCommentForm(FlaskForm):
