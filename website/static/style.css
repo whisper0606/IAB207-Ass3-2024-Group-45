@@ -104,6 +104,12 @@ button{
     width: 100%;
 }
 
+.fixed-height-orders {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
 .card-event {
     height: 415px;
     overflow: hidden;

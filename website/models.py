@@ -11,9 +11,8 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(100), unique=True, nullable=False)
     password_hash = db.Column(db.String(255), nullable=False)
     phone_number = db.Column(db.Integer, nullable=False)
-    events = db.relationship('Event', backref='creator', lazy=True)  # "creator" backref on Event
-    comments = db.relationship('Comment', backref='author', lazy=True)  # "author" backref on Comment
-    orders = db.relationship('Order', backref='buyer', lazy=True)  # "buyer" backref on Order
+    comments = db.relationship('Comment', backref='author', lazy=True)
+    orders = db.relationship('Order', backref='buyer', lazy=True)
     
     def __repr__(self):
         return f"Name: {self.first_name} {self.last_name}, Email: {self.email}"
@@ -46,10 +45,10 @@ class Event(db.Model):
     genre = db.Column(db.Enum(Genre), nullable=False)
     ticket_price = db.Column(db.Integer, nullable=False)
     image = db.Column(db.String(400))
+    artists = db.Column(db.String(100), nullable=False)
     status = db.Column(db.Enum(Status), nullable=False)
     creator_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-    comments = db.relationship('Comment', backref='event', lazy=True)  # "event" backref on Comment
-    orders = db.relationship('Order', backref='event', lazy=True)  # "event" backref on Order
+
 
     def __repr__(self):
         return f"Event\nName: {self.name}\nDateTime: {self.datetime}\nVenue: {self.venue}\nGenre: {self.genre}\nTicket Price: {self.ticket_price}\nCreator ID: {self.creator_id}"
@@ -76,6 +75,7 @@ class Order(db.Model):
     type = db.Column(db.Enum(Type), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     event_id = db.Column(db.Integer, db.ForeignKey('events.id'), nullable=False)
+    events = db.relationship('Event', backref='event', lazy=True)
 
     def __repr__(self):
         return f"Order: {self.id}"

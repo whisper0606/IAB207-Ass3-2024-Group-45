@@ -13,7 +13,7 @@ def create_app():
   
     app = Flask(__name__)  # this is the name of the module/package that is calling this app
     # Should be set to false in a production environment
-    app.debug = True
+    app.debug = False
     app.secret_key = 'somesecretkey'
     # set the app configuration data 
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sitedata.sqlite'
@@ -41,6 +41,10 @@ def create_app():
     @app.errorhandler(404) 
     # inbuilt function which takes error as parameter 
     def not_found(e): 
+      return render_template("error.html", error=e)
+
+    @app.errorhandler(500)
+    def server_error(e):
       return render_template("error.html", error=e)
 
     from . import views

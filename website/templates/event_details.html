@@ -21,36 +21,28 @@
                     <p><strong>Category:</strong> {{ event.genre }}</p>
                     <p><strong>Status:</strong> {{ event.status }}</p>
                     <p><strong>Prices:</strong> Starting from ${{ event.ticket_price }}</p>
-                    <h5>Featured Artists:</h5>
-                    <ul>
-                        {% for artist in event.artists %}
-                            <li>{{ artist.name }}</li>
-                        {% endfor %}
-                    </ul>
-                    <h5>Contact Information:</h5>
-                    <p><strong>Email:</strong> {{ event.contact_email }}</p>
-                    <p><strong>Phone:</strong> {{ event.contact_phone }}</p>
+                    <h5>Featured Artists: {{ event.artists }}</h5>
                 </div>
             </div>
         </div>
 
-        <!-- Comment Section -->
         <div class="container mt-5">
             <h3>Comments</h3>
-            {% for comment in event.comments %}
+            {% for comment in comments %}
                 <div class="card mt-3">
                     <div class="card-body">
-                        <h5 class="card-title">{{ comment.first_name }} {{ comment.last_name }}</h5>
+                        <h5 class="card-title">{{ comment.author.first_name }} {{ comment.author.last_name }}</h5>
                         <p class="card-text">{{ comment.text }}</p>
-                        <p class="card-text"><small class="text-muted">Posted {{ comment.timestamp }}</small></p>
+                        <p class="card-text"><small class="text-muted">Posted {{ comment.created_at.strftime('%Y-%m-%d %H:%M') }}</small></p>
                     </div>
                 </div>
             {% endfor %}
-
-            <form class="mt-4" method="POST" action="{{ url_for('event.comment', id=event.id) }}">
-                {{ form.hidden_tag() }}
-                <label for="comment" class="form-label">Leave a comment</label>
-                <textarea class="form-control" id="comment" name="comment" placeholder="Add your comment..." rows="3"></textarea>
+        
+            <!-- Comment Form -->
+            <form class="mt-4" method="POST" action="{{ url_for('event.show', id=event.id) }}">
+                {{ cform.hidden_tag() }}
+                <label for="text" class="form-label">Leave a comment</label>
+                {{ cform.comment_text(class="form-control", placeholder="Enter comment") }}
                 <button type="submit" class="btn btn-primary mt-2">Post Comment</button>
             </form>
         </div>
@@ -58,27 +50,15 @@
         <!-- Booking Section -->
         <div class="container mt-5">
             <h2>Book Tickets</h2>
-            <form>
+            <form method="POST" action="{{ url_for('event.show', id=event.id) }}">
+                {{ bform.hidden_tag() }}
                 <div class="mb-3">
-                    <label for="ticketType" class="form-label">Ticket Type</label>
-                    <select class="form-select" id="ticketType">
-                        <option value="general">General Admission</option>
-                        <option value="vip">VIP</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="eventCategory" class="form-label">Genre</label>
-                    <select class="form-select" id="eventCategory" required>
-                        <option value="">Select a genre</option>
-                        <option value="rock">Rock/Alternative</option>
-                        <option value="pop">Pop</option>
-                        <option value="electronic">Electronic/Dance</option>
-                        <option value="hiphop">Hip-Hop/R&B</option>
-                    </select>
+                    <label for="ticket_type" class="form-label">Ticket Type</label>
+                    {{ bform.ticket_type(class="form-select") }}
                 </div>
                 <div class="mb-3">
                     <label for="ticketQuantity" class="form-label">Quantity</label>
-                    <input type="number" class="form-control" id="ticketQuantity" name="quantity" min="1" max="10" value="1">
+                    {{ bform.ticket_quantity(class="form-control") }}
                 </div>
                 <button type="submit" class="btn btn-primary mb-5">Confirm Booking</button>
             </form>
