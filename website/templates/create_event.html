@@ -27,6 +27,10 @@
                 {{ form.event_genre(class="form-control", placeholder="Select genre") }}
             </div>
             <div class="mb-3">
+                <label for="event_artist" class="form-label">Event Artist/s</label>
+                {{ form.event_artists(class="form-control", placeholder="Enter event Artist/s") }}
+            </div>
+            <div class="mb-3">
                 <label for="event_image" class="form-label">Event Image - </label>
                 <small class="form-text text-muted">Files accepted: .jpg, .jpeg, .png</small>
                 {{ form.event_image(class="form-control") }}

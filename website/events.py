@@ -33,6 +33,7 @@ def create_event():
             venue=form.event_venue.data,
             ticket_price=form.event_ticket_price.data,
             genre=form.event_genre.data,
+            artists=form.event_artists.data,
             status="OPEN",
             image=filename,
             creator_id=creator_id
