@@ -87,7 +87,7 @@ def show(id):
         return redirect(url_for('event.show', id=event.id))
 
     # Render the event details template with comments, forms, and event details
-    return render_template('event_details.html', Comment=Comment, event=event, comments=comments, cform=cform, bform=bform, title="MusicLIVE | " + event.name)
+    return render_template('event_details.html', current_user=current_user, Comment=Comment, event=event, comments=comments, cform=cform, bform=bform, title="MusicLIVE | " + event.name)
 
 @event_bp.route('/orders', methods=['GET'])
 @login_required

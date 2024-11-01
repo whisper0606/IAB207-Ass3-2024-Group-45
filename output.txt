@@ -1,0 +1,73 @@
+Christina Garvey (24):
+      first commit
+      Update create_event.html
+      second commit
+      Updates to nav, footer and more
+      Merge branch 'main' of https://github.com/whisper0606/IAB207-Ass3-2024-Group-45
+      Some extra changes
+      Merge branch 'main' of https://github.com/whisper0606/IAB207-Ass3-2024-Group-45
+      Create login.html
+      Create register.html
+      re-organised code and some design implementations
+      some changes to style of nav, footer etc
+      footer button
+      updated href for footer logo
+      hover nav and footer styling
+      Merge branch 'main' of https://github.com/whisper0606/IAB207-Ass3-2024-Group-45
+      footer a href hoverable
+      comm
+      com
+      b
+      delete
+      fixed styles.css + more to be done
+      Merge branch 'main' of https://github.com/whisper0606/IAB207-Ass3-2024-Group-45
+      footer hover fixed
+      better together images + about us and contact info
+
+Josephine Joy (8):
+      Update create_event.html
+      Update create_event.html
+      Update index.html
+      Update event_details.html
+      Update login.html
+      Update register.html
+      Update my_bookings.html
+      Update style.css
+
+Trent Sugars (9):
+      Updated register,login and logout functions in auth.py
+      Merge branch 'main' of https://github.com/whisper0606/IAB207-Ass3-2024-Group-45
+      fixed auth_bp comments in auth.py
+      Updated class User and Comment for db
+      Added error handling in error.html and init.py
+      adding "create event" to nav bar and connecting create event form
+      Clicking on the events changed to display event details, along with setting up py file
+      Edited lines to display the event details
+      changing image time for creating event
+
+Will Lucas (24):
+      Initial commit - Added template files
+      Testing
+      Added frontend files
+      implementing basic DB functionality
+      created DB
+      basic register and login forms working
+      barebones event creation form added
+      we can now post comments yippee!
+      We can now place orders
+      Merge branch 'main' of https://github.com/whisper0606/IAB207-Ass3-2024-Group-45
+      re-added images
+      Integrated login and signup with frontend
+      hopefully adding missing templates
+      Merge branch 'main' of https://github.com/whisper0606/IAB207-Ass3-2024-Group-45
+      bug fixes, starting work on event creation
+      Added image upload functionality when creating events
+      Polished error page (thank you Joy!)
+      We can now see events!
+      Index page complete.
+      Manually merged changes with working code, hopefully fixing functionality issues
+      fixing issues hopefully
+      Fixed titles on pages, added file type notice on create event page
+      Merge branch 'main' of https://github.com/whisper0606/IAB207-Ass3-2024-Group-45
+      Final revision, mostly ready to submit.
+

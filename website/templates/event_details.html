@@ -1,68 +1,74 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <!--MAIN CONTENT-->
-    <main>
-        <div class="container text-center mt-5">
-            <h1>{{ event.name }}</h1>
-            <p class="lead">Australia's premier multi-genre music extravaganza, set to electrify {{ event.venue }}!</p>
-        </div>
+<!--MAIN CONTENT-->
+<main>
+    <div class="container text-center mt-5">
+        <h1>{{ event.name }}</h1>
+        <p class="lead">Australia's premier multi-genre music extravaganza, set to electrify {{ event.venue }}!</p>
+    </div>
 
-        <!-- Event Details Section -->
-        <div class="container mt-4">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="{{ url_for('static', filename='event_images/' + event.image) }}" class="img-fluid rounded" alt="{{ event.name }}">
-                </div>
-                <div class="col-md-6">
-                    <h2>Event Details</h2>
-                    <p><strong>Date & Time:</strong> {{ event.datetime }} </p>
-                    <p><strong>Location:</strong> {{ event.venue }}</p>
-                    <p><strong>Category:</strong> {{ event.genre }}</p>
-                    <p><strong>Status:</strong> {{ event.status }}</p>
-                    <p><strong>Prices:</strong> Starting from ${{ event.ticket_price }}</p>
-                    <h5>Featured Artists: {{ event.artists }}</h5>
-                </div>
+    <!-- Event Details Section -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='event_images/' + event.image) }}" class="img-fluid rounded"
+                    alt="{{ event.name }}">
+            </div>
+            <div class="col-md-6">
+                <h2>Event Details</h2>
+                <p><strong>Date & Time:</strong> {{ event.datetime }} </p>
+                <p><strong>Location:</strong> {{ event.venue }}</p>
+                <p><strong>Category:</strong> {{ event.genre }}</p>
+                <p><strong>Status:</strong> {{ event.status }}</p>
+                <p><strong>Prices:</strong> Starting from ${{ event.ticket_price }}</p>
+                <h5>Featured Artists: {{ event.artists }}</h5>
             </div>
         </div>
+    </div>
 
-        <div class="container mt-5">
-            <h3>Comments</h3>
-            {% for comment in comments %}
-                <div class="card mt-3">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ comment.author.first_name }} {{ comment.author.last_name }}</h5>
-                        <p class="card-text">{{ comment.text }}</p>
-                        <p class="card-text"><small class="text-muted">Posted {{ comment.created_at.strftime('%Y-%m-%d %H:%M') }}</small></p>
-                    </div>
-                </div>
-            {% endfor %}
-        
-            <!-- Comment Form -->
-            <form class="mt-4" method="POST" action="{{ url_for('event.show', id=event.id) }}">
-                {{ cform.hidden_tag() }}
-                <label for="text" class="form-label">Leave a comment</label>
-                {{ cform.comment_text(class="form-control", placeholder="Enter comment") }}
-                <button type="submit" class="btn btn-primary mt-2">Post Comment</button>
-            </form>
+    <div class="container mt-5">
+        <h3>Comments</h3>
+        {% for comment in comments %}
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ comment.author.first_name }} {{ comment.author.last_name }}</h5>
+                <p class="card-text">{{ comment.text }}</p>
+                <p class="card-text"><small class="text-muted">Posted {{ comment.created_at.strftime('%Y-%m-%d %H:%M')
+                        }}</small></p>
+            </div>
         </div>
+        {% endfor %}
 
-        <!-- Booking Section -->
-        <div class="container mt-5">
-            <h2>Book Tickets</h2>
-            <form method="POST" action="{{ url_for('event.show', id=event.id) }}">
-                {{ bform.hidden_tag() }}
-                <div class="mb-3">
-                    <label for="ticket_type" class="form-label">Ticket Type</label>
-                    {{ bform.ticket_type(class="form-select") }}
-                </div>
-                <div class="mb-3">
-                    <label for="ticketQuantity" class="form-label">Quantity</label>
-                    {{ bform.ticket_quantity(class="form-control") }}
-                </div>
-                <button type="submit" class="btn btn-primary mb-5">Confirm Booking</button>
-            </form>
-        </div>
-    </main>
+        {% if current_user.is_authenticated %}
+        <!-- Comment Form -->
+        <form class="mt-4" method="POST" action="{{ url_for('event.show', id=event.id) }}">
+            {{ cform.hidden_tag() }}
+            <label for="text" class="form-label">Leave a comment</label>
+            {{ cform.comment_text(class="form-control", placeholder="Enter comment") }}
+            <button type="submit" class="btn btn-primary mt-2">Post Comment</button>
+        </form>
+        {% endif %}
+    </div>
+
+    {% if current_user.is_authenticated %}
+    <!-- Booking Section -->
+    <div class="container mt-5">
+        <h2>Book Tickets</h2>
+        <form method="POST" action="{{ url_for('event.show', id=event.id) }}">
+            {{ bform.hidden_tag() }}
+            <div class="mb-3">
+                <label for="ticket_type" class="form-label">Ticket Type</label>
+                {{ bform.ticket_type(class="form-select") }}
+            </div>
+            <div class="mb-3">
+                <label for="ticketQuantity" class="form-label">Quantity</label>
+                {{ bform.ticket_quantity(class="form-control") }}
+            </div>
+            <button type="submit" class="btn btn-primary mb-5">Confirm Booking</button>
+        </form>
+    </div>
+    {% endif %}
+</main>
 
 {% endblock %}
