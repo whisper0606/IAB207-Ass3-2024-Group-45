@@ -21,15 +21,8 @@
                     <p><strong>Category:</strong> {{ event.genre }}</p>
                     <p><strong>Status:</strong> {{ event.status }}</p>
                     <p><strong>Prices:</strong> Starting from ${{ event.ticket_price }}</p>
-                    <h5>Featured Artists:</h5>
-                    <ul>
-                        {% for artist in event.artists %}
-                            <li>{{ artist.name }}</li>
-                        {% endfor %}
-                    </ul>
-                    <h5>Contact Information:</h5>
-                    <p><strong>Email:</strong> {{ event.contact_email }}</p>
-                    <p><strong>Phone:</strong> {{ event.contact_phone }}</p>
+                    <p><strong>Featured Artists:</strong> {{ event.artists }}</p>
+                    
                 </div>
             </div>
         </div>

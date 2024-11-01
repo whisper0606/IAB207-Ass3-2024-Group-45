@@ -44,6 +44,7 @@ class Event(db.Model):
     datetime = db.Column(db.DateTime, nullable=False)
     venue = db.Column(db.String(100), nullable=False)
     genre = db.Column(db.Enum(Genre), nullable=False)
+    artists = db.Column(db.String(100), nullable=False)
     ticket_price = db.Column(db.Integer, nullable=False)
     image = db.Column(db.String(400))
     status = db.Column(db.Enum(Status), nullable=False)
