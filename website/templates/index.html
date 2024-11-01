@@ -18,10 +18,12 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ url_for('static', filename='img/dance.jpg') }}" class="d-block w-100" alt="dance">
+                    <img src="{{ url_for('static', filename='img/Better-together-slogan-pexels.png') }}"
+                        class="d-block w-100" alt="dance">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ url_for('static', filename='img/pop.jpg') }}" class="d-block w-100" alt="pop">
+                    <img src="{{ url_for('static', filename='img/concert-pexels.jpg') }}" class="d-block w-100"
+                        alt="pop">
                 </div>
                 <div class="carousel-item">
                     <img src="{{ url_for('static', filename='img/hiphop.jpg') }}" class="d-block w-100" alt="hiphop">
@@ -41,12 +43,16 @@
         </div>
 
         <!-- MAIN HEADING -->
-        <div class="container text-center mt-5">
-            <h1 id="browse-events">Where Music Meets Magic!</h1>
-            <p class="lead">Festival Wave is Australia's premier multi-genre music extravaganza, set to electrify
-                Wollongong Plaza, NSW from August 16-18, 2025. This three-day celebration of sound and culture
-                brings together the best of rock, pop, electronic, and hip-hop music, featuring a stellar lineup
-                including Courtney Barnett, Tame Impala, The KID Laroi, Flume, and Hilltop Hoods.</p>
+        <div class="container text-center mt-4 mb-2">
+            <h1 id="browse-events">Experience the power of MusicLIVE!</h1>
+            <p class="lead">Your ultimate destination for discovering, creating, and sharing live music experiences.
+                Born from a passion for music and a vision to bring people together, we’ve built a platform where fans,
+                artists,
+                and organisers can connect and celebrate the magic of live performances.</p>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button type="button" class="btn btn-primary" onclick="document.location='#about-us'">Learn More About
+                    Us</button>
+            </div>
         </div>
 
         <!-- Category Filter -->
@@ -58,12 +64,16 @@
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li><a class="dropdown-item" href="/">All Events</a></li>
-                    <li><a class="dropdown-item" href="{{ url_for('main.index', category='ROCK_ALT') }}">Rock/Alternative</a></li>
-                    <li><a class="dropdown-item" href="{{ url_for('main.index', category='POP_FOLK') }}">Pop/Folk</a></li>
-                    <li><a class="dropdown-item" href="{{ url_for('main.index', category='HIPHOP_RNB') }}">Hip-hop/R&B</a></li>
-                    <li><a class="dropdown-item" href="{{ url_for('main.index', category='EDM') }}">Electronic/Dance</a></li>
+                    <li><a class="dropdown-item"
+                            href="{{ url_for('main.index', category='ROCK_ALT') }}">Rock/Alternative</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('main.index', category='POP_FOLK') }}">Pop/Folk</a>
+                    </li>
+                    <li><a class="dropdown-item"
+                            href="{{ url_for('main.index', category='HIPHOP_RNB') }}">Hip-hop/R&B</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('main.index', category='EDM') }}">Electronic/Dance</a>
+                    </li>
                 </ul>
-            </div> 
+            </div>
         </div>
 
         <div class="container mt-5">
@@ -83,24 +93,55 @@
                             class="card-img-top fixed-height" alt="{{ event.name }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ event.name }}</h5>
-                            <p class="card-text">Location: {{ event.venue }}<br>Genre: {{ event.genre }}<br>Status: {{ event.status }}</p>
+                            <p class="card-text">Location: {{ event.venue }}<br>Genre: {{ event.genre }}<br>Status: {{
+                                event.status }}</p>
                             {% if event.status == Event.Status.OPEN %}
-                            <a href="{{ url_for('main.index', event_id=event.id) }}" class="btn btn-primary">View
+                            <a href="{{ url_for('event.show', id=event.id) }}" class="btn btn-primary">View
                                 Details</a>
                             {% elif event.status == Event.Status.SOLDOUT %}
-                            <a href="{{ url_for('main.index', event_id=event.id) }}" class="btn btn-warning">Sold
+                            <a href="{{ url_for('event.show', id=event.id) }}" class="btn btn-warning">Sold
                                 Out</a>
                             {% elif event.status == Event.Status.CANCELLED %}
-                            <a href="{{ url_for('main.index', event_id=event.id) }}"
-                                class="btn btn-danger">Cancelled</a>
+                            <a href="{{ url_for('event.show', id=event.id) }}" class="btn btn-danger">Cancelled</a>
                             {% elif event.status == Event.Status.INACTIVE %}
-                            <a href="{{ url_for('main.index', event_id=event.id) }}"
-                                class="btn btn-secondary">Inactive</a>
+                            <a href="{{ url_for('event.show', id=event.id) }}" class="btn btn-secondary">Inactive</a>
                             {% endif %}
                         </div>
                     </div>
                 </div>
                 {% endfor %}
+            </div>
+        </div>
+        <!--ABOUT US-->
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-12">
+                    <h2 id="about-us" class="text-center">About us at MusicLIVE</h2>
+                    <p class="lead text-center">Our Journey began in 2023 with a vision: to make it easier for music
+                        lovers to find events that inspire them. Since then,
+                        we've grown into a vibrant community where music lovers come together to explore, experience,
+                        and celebrate live music.
+                        What started as a small idea has blossomed into a thriving platform, supported by a team
+                        dedicated to delivering an exceptional experience for users everywhere.
+                    </p>
+                    <p class="lead text-center">We believe that live music should be accessible to everyone, everywhere.
+                        Our mission is to empower music enthusiasts,
+                        artists, and event organizers by providing an easy, streamlined way to discover and promote
+                        events that move people.
+                    </p>
+                    <p class="lead text-center">Join Us on This Musical Journey!
+                        Whether you’re an avid concert-goer, an independent artist, or an organizer, MusicLIVE is here
+                        for you. Browse events, connect with fellow music lovers, and be part of a community that
+                        celebrates live music in all its forms.
+                    </p>
+                    <p class="lead text-center bold">- MusicLIVE, Better Together :)</p>
+
+                </div>
+                <div class="col-12">
+                    <h2 id="contact-us" class="text-center">Contact Us</h2>
+                    <p class="lead text-center">Email: events@musiclive.com.au</p>
+                </div>
+
             </div>
         </div>
 
