@@ -16,11 +16,11 @@
                 </div>
                 <div class="col-md-6">
                     <h2>Event Details</h2>
-                    <p><strong>Date & Time:</strong> {{ event.start_date }} | Starts at {{ event.start_time }}</p>
-                    <p><strong>Location:</strong> {{ event.location }}</p>
-                    <p><strong>Category:</strong> {{ event.category }}</p>
+                    <p><strong>Date & Time:</strong> {{ event.datetime }} </p>
+                    <p><strong>Location:</strong> {{ event.venue }}</p>
+                    <p><strong>Category:</strong> {{ event.genre }}</p>
                     <p><strong>Status:</strong> {{ event.status }}</p>
-                    <p><strong>Prices:</strong> Starting from ${{ event.price }}</p>
+                    <p><strong>Prices:</strong> Starting from ${{ event.ticket_price }}</p>
                     <h5>Featured Artists:</h5>
                     <ul>
                         {% for artist in event.artists %}
